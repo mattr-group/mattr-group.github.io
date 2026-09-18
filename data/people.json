@@ -1,0 +1,63 @@
+[
+  {
+    "order": 10,
+    "role": "pi",
+    "name": "Dr Pete Lally",
+    "title": "Assistant Professor in MR Physics, group lead",
+    "photo": "",
+    "line": "Brain MRI, spatial encoding strategies, pulse sequence design, MR spectroscopy, and quantitative biomarkers in clinical trials. PhD at Imperial on MR spectroscopy of the neonatal brain; Sir Henry Wellcome Postdoctoral Fellow 2020 to 2024; registered Clinical Scientist in MR physics.",
+    "links": [
+      { "label": "Email", "href": "mailto:p.lally@imperial.ac.uk" },
+      { "label": "Imperial profile", "href": "https://profiles.imperial.ac.uk/p.lally" },
+      { "label": "ORCID", "href": "https://orcid.org/0000-0003-0075-0103" }
+    ]
+  },
+  {
+    "order": 20,
+    "role": "phd",
+    "name": "Yassine Azma",
+    "title": "PhD student, since 2023",
+    "photo": "",
+    "line": "Fat quantification with whole-body MRI in malignant bone disease, using variable flip angle chemical shift encoding, alongside work on B1 mapping. Also an MRI Clinical Scientist at the Royal Marsden. UCL MSci in Medical Physics, then the NHS Scientist Training Programme at St George's and the Royal Marsden.",
+    "links": []
+  },
+  {
+    "order": 30,
+    "role": "phd",
+    "name": "Coraline",
+    "title": "PhD student, surname to confirm",
+    "photo": "",
+    "todo": true,
+    "line": "Signal model work, and ISMRM organisation including the British Chapter postgraduate meeting.",
+    "links": []
+  },
+  {
+    "order": 40,
+    "role": "phd",
+    "name": "Haneefah",
+    "title": "PhD student, surname to confirm",
+    "photo": "",
+    "todo": true,
+    "line": "Super-resolution sodium MRI. Sodium concentration carries diagnostic information in knee osteoarthritis and in degenerative brain disease, but image quality has always been the obstacle; the approach combines unbalanced SSFP with 3D cones at ultra-high field. From Makkah, Saudi Arabia.",
+    "links": []
+  },
+  {
+    "order": 50,
+    "role": "phd",
+    "name": "James",
+    "title": "PhD student, surname to confirm",
+    "photo": "",
+    "todo": true,
+    "line": "Diffusion MRI microstructure: short-T2 soma contrast, the temporal diffusion ratio as a route to isotropic restricted diffusion, and parameter estimation from sparsely sampled acquisitions.",
+    "links": []
+  },
+  {
+    "order": 60,
+    "role": "phd",
+    "name": "Zhenxuan Zhang",
+    "title": "PhD student",
+    "photo": "",
+    "line": "Motion-robust MRI reconstruction with implicit neural representations, uncertainty-aware acquisition, and ultra-low-field to high-field synthesis. Co-supervised with Prof Guang Yang.",
+    "links": [ { "label": "Website", "href": "https://zhenxuan-zhang.github.io" } ]
+  }
+]

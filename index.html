@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATTR — MR physics group, Imperial College London</title>
+<meta name="description" content="MATTR is the magnetic resonance physics group of Dr Pete Lally in the Department of Bioengineering, Imperial College London. Sequence design, ultra-high field, and quantitative MR biomarkers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F6F7; --surface:#FFFFFF; --surface-2:#E9EEF0;
+    --ink:#0F1A20; --ink-2:#4C5C66; --ink-3:#77878F; --rule:#D2DADE;
+    --signal:#0B6E75; --signal-soft:#DCEDEE;
+    --phase:#584A87; --phase-soft:#E6E2F1;
+    --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1317; --surface:#121E24; --surface-2:#1A272E;
+      --ink:#E7EEF0; --ink-2:#9DAEB6; --ink-3:#74868F; --rule:#23333B;
+      --signal:#4FC3C9; --signal-soft:#123338;
+      --phase:#A899DD; --phase-soft:#221E38;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1317; --surface:#121E24; --surface-2:#1A272E;
+    --ink:#E7EEF0; --ink-2:#9DAEB6; --ink-3:#74868F; --rule:#23333B;
+    --signal:#4FC3C9; --signal-soft:#123338;
+    --phase:#A899DD; --phase-soft:#221E38;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+  .shell{display:flex;min-height:100vh}
+  .rail{width:236px;flex:0 0 236px;border-right:1px solid var(--rule);background:var(--surface);
+        position:sticky;top:0;height:100vh;padding:30px 22px;display:flex;flex-direction:column}
+  .mark{font-weight:600;font-size:1.32rem;letter-spacing:.02em}
+  .sub{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:.84rem;
+       color:var(--ink-2);margin-top:7px;letter-spacing:0;line-height:1.4}
+  .rail nav{margin-top:32px;display:flex;flex-direction:column;gap:1px}
+  .rail nav a{text-decoration:none;color:var(--ink-2);font-size:.9rem;padding:7px 10px;
+              border-left:2px solid transparent;margin-left:-2px;transition:color .15s}
+  .rail nav a:hover{color:var(--ink)}
+  .rail nav a[aria-current="true"]{color:var(--ink);border-left-color:var(--signal);font-weight:500}
+  .rail .foot{margin-top:auto;font-size:.78rem;color:var(--ink-3);line-height:1.5}
+  .rail .foot a{color:var(--signal)}
+
+  .main{flex:1;min-width:0}
+  .wrap{max-width:74ch;padding:0 40px}
+  section{padding:74px 0;border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:0}
+
+  h1,h2,h3{letter-spacing:-0.018em;font-weight:600;margin:0}
+  h1{font-size:2.45rem;line-height:1.1}
+  h2{font-size:1.45rem;margin-bottom:6px}
+  h3{font-size:1rem;font-weight:600}
+  p{margin:0 0 1em;max-width:68ch}
+  .lede{font-family:var(--serif);font-size:1.13rem;line-height:1.65;color:var(--ink-2)}
+  .sec-note{color:var(--ink-3);font-size:.9rem;margin-bottom:32px}
+
+  .hero{padding:70px 0 62px;border-bottom:1px solid var(--rule)}
+  .hero h1{max-width:17ch}
+  .hero .lede{margin-top:20px;max-width:58ch}
+  .hero .where{font-size:.9rem;color:var(--ink-3);margin-top:22px}
+  .field{margin-top:50px}
+  .field-cap{font-size:.86rem;color:var(--ink-2);margin-bottom:14px}
+  .axis{height:118px}
+  .axis svg{width:100%;height:100%;display:block;overflow:visible}
+  .axis .ln{stroke:var(--rule);stroke-width:1}
+  .axis .tick{stroke:var(--ink-3);stroke-width:1}
+  .axis .dot{fill:var(--signal)}
+  .axis .lbl{fill:var(--ink);font-family:var(--sans);font-size:15px;font-weight:600}
+  .axis .sub{fill:var(--ink-3);font-family:var(--sans);font-size:11.5px;font-style:normal;display:inline}
+  .sweep{stroke:var(--signal);stroke-width:1.5;opacity:0}
+  @keyframes sweep{0%{transform:translateX(0);opacity:0}12%{opacity:.85}88%{opacity:.85}100%{transform:translateX(640px);opacity:0}}
+  .anim .sweep{animation:sweep 2.1s cubic-bezier(.3,.05,.2,1) .35s 1 both}
+  @media (prefers-reduced-motion:reduce){.anim .sweep{animation:none;opacity:0}}
+
+  .theme{padding:22px 0;border-top:1px solid var(--rule)}
+  .theme:first-of-type{border-top:0}
+  .theme h3{margin-bottom:6px}
+  .theme p{color:var(--ink-2);font-size:.95rem;margin:0}
+  .theme .meta{font-size:.82rem;color:var(--ink-3);margin-top:8px}
+
+  .filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .filters button{font:inherit;font-size:.84rem;padding:5px 12px;border-radius:999px;
+    border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--signal);border-color:var(--signal);color:var(--paper)}
+
+  .people{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .card{background:var(--surface);padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
+  .card.lead{padding:26px 20px}
+  .av{flex:0 0 48px;width:48px;height:48px;border-radius:50%;overflow:hidden;background:var(--surface-2)}
+  .card.lead .av{flex-basis:64px;width:64px;height:64px}
+  .av svg,.av img{width:100%;height:100%;display:block;object-fit:cover}
+  .who{min-width:0}
+  .who b{font-weight:600;font-size:1rem}
+  .role{color:var(--ink-2);font-size:.88rem}
+  .line{color:var(--ink-3);font-size:.86rem;margin-top:6px}
+  .links{margin-top:8px;font-size:.82rem;display:flex;gap:14px;flex-wrap:wrap}
+  .links a{color:var(--signal);text-decoration:none;border-bottom:1px solid transparent}
+  .links a:hover{border-bottom-color:currentColor}
+  .flag{display:inline-block;margin-left:7px;font-size:.72rem;color:var(--phase);
+        border:1px solid var(--phase);border-radius:3px;padding:0 5px;vertical-align:2px}
+
+  .pub{padding:16px 0;border-top:1px solid var(--rule);font-size:.93rem}
+  .pub:first-of-type{border-top:0}
+  .pub .t{font-family:var(--serif);font-size:1.02rem;line-height:1.45;display:block;margin-bottom:5px}
+  .pub .t a{text-decoration:none;border-bottom:1px solid transparent}
+  .pub .t a:hover{border-bottom-color:var(--signal)}
+  .pub .a{color:var(--ink-2);font-size:.86rem}
+  .pub .v{margin-top:6px;font-size:.82rem;color:var(--ink-3)}
+  .pub .v em{font-style:normal;color:var(--signal)}
+  .yr{display:inline-block;min-width:3.2em;font-variant-numeric:tabular-nums;color:var(--ink-3);font-size:.82rem}
+
+  .rhythm{display:grid;grid-template-columns:7.5em 1fr;gap:10px 18px;font-size:.92rem;margin:0}
+  .rhythm dt{color:var(--ink-3)}
+  .rhythm dd{margin:0}
+  .facts{border:1px solid var(--rule);background:var(--surface);padding:20px 22px;margin-top:8px}
+  .facts dl{margin:0;display:grid;grid-template-columns:8.5em 1fr;gap:9px 18px;font-size:.9rem}
+  .facts dt{color:var(--ink-3)}
+  .facts dd{margin:0}
+  .facts a{color:var(--signal)}
+  .todo{border-left:3px solid var(--phase);background:var(--phase-soft);padding:14px 18px;
+        font-size:.88rem;color:var(--ink-2);margin:26px 0 0}
+  .todo b{color:var(--ink);font-weight:600}
+  .stamp{font-size:.8rem;color:var(--ink-3);margin-top:18px}
+
+  .topbar{display:none}
+  @media (max-width:900px){
+    .shell{display:block}
+    .rail{display:none}
+    .topbar{display:block;position:sticky;top:0;z-index:10;background:var(--surface);
+            border-bottom:1px solid var(--rule);padding:13px 20px}
+    .topbar nav{display:flex;gap:16px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
+    .topbar nav a{white-space:nowrap;text-decoration:none;color:var(--ink-2);font-size:.85rem}
+    .topbar nav a[aria-current="true"]{color:var(--ink);font-weight:500}
+    .wrap{padding:0 20px}
+    section{padding:50px 0}
+    .hero{padding:42px 0}
+    h1{font-size:1.95rem}
+    .facts dl,.rhythm{grid-template-columns:1fr;gap:3px 0}
+    .facts dt,.rhythm dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <aside class="rail">
+    <div>
+      <div class="mark">MATTR</div>
+      <div class="sub">MR physics<br>Imperial College London</div>
+    </div>
+    <nav id="railnav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#life">Group life</a>
+      <a href="#join">Join us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="foot">
+      Department of Bioengineering<br>
+      Sir Michael Uren Hub<br>
+      White City Campus, London<br><br>
+      <a href="mailto:p.lally@imperial.ac.uk">p.lally@imperial.ac.uk</a>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="mark">MATTR</div>
+    <nav id="topnav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#life">Group life</a>
+      <a href="#join">Join us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+
+      <div class="hero anim" id="top">
+        <h1>Getting more out of every readout.</h1>
+        <p class="lede">MATTR is a magnetic resonance physics group in the Department of Bioengineering at Imperial College London. We design acquisition and encoding strategies that make MRI faster and sharper, and turn them into measurements that hold up outside our own scanner room.</p>
+        <p class="where">Led by Dr Pete Lally · Sir Michael Uren Hub, White City Campus</p>
+
+        <div class="field">
+          <p class="field-cap">Where our work runs, by field strength:</p>
+          <div class="axis">
+            <svg viewBox="0 0 640 118" preserveAspectRatio="none" role="img" aria-label="Field strengths used by the group: 3 tesla at Hammersmith, 7 tesla at LoCUS, 9.4 tesla preclinical">
+              <line class="ln" x1="0" y1="62" x2="640" y2="62"></line>
+              <g>
+                <line class="tick" x1="80" y1="54" x2="80" y2="70"></line>
+                <circle class="dot" cx="80" cy="62" r="4.5"></circle>
+                <text class="lbl" x="80" y="40" text-anchor="middle">3 T</text>
+                <text class="sub" x="80" y="88" text-anchor="middle">Robert Steiner MR Unit</text>
+                <text class="sub" x="80" y="103" text-anchor="middle">Hammersmith</text>
+              </g>
+              <g>
+                <line class="tick" x1="330" y1="54" x2="330" y2="70"></line>
+                <circle class="dot" cx="330" cy="62" r="4.5"></circle>
+                <text class="lbl" x="330" y="40" text-anchor="middle">7 T</text>
+                <text class="sub" x="330" y="88" text-anchor="middle">LoCUS</text>
+                <text class="sub" x="330" y="103" text-anchor="middle">London collaborative ultra-high field</text>
+              </g>
+              <g>
+                <line class="tick" x1="560" y1="54" x2="560" y2="70"></line>
+                <circle class="dot" cx="560" cy="62" r="4.5" style="fill:var(--phase)"></circle>
+                <text class="lbl" x="560" y="40" text-anchor="middle">9.4 T</text>
+                <text class="sub" x="560" y="88" text-anchor="middle">Preclinical</text>
+                <text class="sub" x="560" y="103" text-anchor="middle">method validation</text>
+              </g>
+              <line class="sweep" x1="0" y1="14" x2="0" y2="110"></line>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <section id="about">
+        <h2>About</h2>
+        <p class="sec-note">What we work on and where we sit.</p>
+        <p>Most of MRI's remaining headroom is in how the signal is encoded, not in how it is cleaned up afterwards. We build pulse sequences and spatial encoding schemes that collect more information per unit time, and we validate them carefully enough that the resulting numbers can be used as biomarkers in a clinical study rather than only in a methods paper.</p>
+        <p>The group spans sequence design, ultra-high field imaging, diffusion microstructure, body MRI, and learning-based reconstruction. We work across Imperial's clinical MRI facilities and with collaborators in the NHS trusts, and we prefer projects where a physics idea has a named clinical question waiting for it.</p>
+
+        <div class="facts">
+          <dl>
+            <dt>Group lead</dt><dd>Dr Pete Lally, Assistant Professor in Magnetic Resonance Physics</dd>
+            <dt>Department</dt><dd>Bioengineering, Faculty of Engineering</dd>
+            <dt>Office</dt><dd>511A, Sir Michael Uren Hub, White City Campus</dd>
+            <dt>Email</dt><dd><a href="mailto:p.lally@imperial.ac.uk">p.lally@imperial.ac.uk</a></dd>
+            <dt>ORCID</dt><dd><a href="https://orcid.org/0000-0003-0075-0103">0000-0003-0075-0103</a></dd>
+            <dt>Affiliated with</dt><dd>London Collaborative Ultra-high field System (LoCUS) · Imperial MRI Physics Collective · Centre for Perinatal Neuroscience · Computational, Cognitive and Clinical Neuroimaging Laboratory</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <p class="sec-note">Five threads, all of them about encoding.</p>
+        <div id="themes"></div>
+      </section>
+
+      <section id="people">
+        <h2>People</h2>
+        <p class="sec-note">Filter by role.</p>
+        <div class="filters" id="pfilters"></div>
+        <div class="people" id="plist"></div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <p class="sec-note">Selected work. Full list on ORCID.</p>
+        <div class="filters" id="yfilters"></div>
+        <div id="publist"></div>
+        <p class="stamp" id="pubstamp"></p>
+      </section>
+
+      <section id="life">
+        <h2>Group life</h2>
+        <p class="sec-note">How the week runs.</p>
+        <dl class="rhythm">
+          <dt>Group meeting</dt><dd>Thursdays, 16:00, Uren 5th floor meeting room. One slide each on what moved, what is next, and what is stuck, plus a rotating 15 minute talk.</dd>
+          <dt>Group lunch</dt><dd>Tuesdays.</dd>
+          <dt>Away day</dt><dd>Once a year, early September.</dd>
+          <dt>Conferences</dt><dd>ISMRM and the British Chapter meeting are the fixtures, alongside ISBI and GERF.</dd>
+        </dl>
+        <p style="margin-top:22px">New members give an introduction at their first or second meeting: where you are from, how you got here, and what you are going to work on. It is the fastest way to find out who else in the room has already hit the problem you are about to hit.</p>
+      </section>
+
+      <section id="join">
+        <h2>Join us</h2>
+        <p>We take PhD students through the Department of Bioengineering, and are happy to host MSc projects and visiting researchers. A background in physics, engineering, or a quantitative clinical science is the usual route in. Comfort with signal processing and a programming language matters more than previous MRI experience, and several people here arrived from clinical scientist training rather than from a physics PhD track.</p>
+        <p>If you are applying for your own fellowship or scholarship, get in touch early. Proposals are much stronger when the project is shaped together rather than fitted to a deadline.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Dr Pete Lally<br>
+        Department of Bioengineering, Imperial College London<br>
+        511A, Sir Michael Uren Hub, White City Campus<br>
+        86 Wood Lane, London W12 0BZ</p>
+        <p><a href="mailto:p.lally@imperial.ac.uk" style="color:var(--signal)">p.lally@imperial.ac.uk</a></p>
+        <p class="stamp">Draft group site, not yet reviewed by the group.</p>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+/* ============================================================================
+   WHERE THE CONTENT COMES FROM
+
+   people        the published Google Sheet named below, if one is set;
+                 otherwise data/people.json; otherwise the built-in list.
+   publications  data/publications.json, refreshed weekly by the GitHub
+                 Action in .github/workflows/update-publications.yml.
+   themes        data/themes.json.
+
+   Nothing here needs a build step. Edit the sheet or the JSON and the page
+   picks it up on the next load.
+   ========================================================================== */
+
+const CONFIG = {
+  // File > Share > Publish to web > People sheet > Comma-separated values.
+  // Paste that link here. Leave empty to use data/people.json instead.
+  peopleSheetCSV: "",
+
+  peopleJSON:       "data/people.json",
+  publicationsJSON: "data/publications.json",
+  themesJSON:       "data/themes.json",
+
+  // Photos named in the sheet without a scheme are looked for in this folder.
+  photoDir: "photos/"
+};
+
+/* Built-in fallback, used when nothing above can be loaded (opening the file
+   straight off disk, for example). Keep it roughly in step with the sheet. */
+const FALLBACK = {
+  roles: [
+    { key: "pi", label: "Group lead" },
+    { key: "phd", label: "PhD students" },
+    { key: "postdoc", label: "Postdocs" },
+    { key: "msc", label: "MSc and visiting" },
+    { key: "alumni", label: "Alumni" }
+  ],
+  people: [
+    { order: 10, role: "pi", name: "Dr Pete Lally",
+      title: "Assistant Professor in MR Physics, group lead",
+      line: "Brain MRI, spatial encoding strategies, pulse sequence design, MR spectroscopy, and quantitative biomarkers in clinical trials.",
+      links: [{ label: "Email", href: "mailto:p.lally@imperial.ac.uk" }] }
+  ],
+  themes: [],
+  publications: []
+};
+
+/* ---------------------------------------------------------------- helpers */
+
+function esc(s){ return String(s == null ? "" : s)
+  .replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function hash(str){
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+
+/* A radial k-space pattern seeded by the person's name, so everyone has a
+   distinct avatar until a photograph is added. */
+function avatarSVG(name){
+  const h = hash(name || "?");
+  const tints = [
+    ["var(--signal-soft)", "var(--signal)"],
+    ["var(--phase-soft)",  "var(--phase)"],
+    ["var(--surface-2)",   "var(--signal)"],
+    ["var(--surface-2)",   "var(--phase)"]
+  ];
+  const [bg, fg] = tints[h % tints.length];
+  const spokes = 7 + (h >> 3) % 8;
+  const rot = (h >> 7) % 180;
+  let lines = "";
+  for (let i = 0; i < spokes; i++){
+    const a = (rot + i * 111.246) * Math.PI / 180;
+    const r = 30 + ((h >> (i % 11)) % 14);
+    const w = 0.7 + ((h >> (i % 7)) % 3) * 0.35;
+    lines += `<line x1="${(32 - Math.cos(a) * r).toFixed(1)}" y1="${(32 - Math.sin(a) * r).toFixed(1)}"`
+          +  ` x2="${(32 + Math.cos(a) * r).toFixed(1)}" y2="${(32 + Math.sin(a) * r).toFixed(1)}"`
+          +  ` stroke="${fg}" stroke-width="${w}" opacity="0.4"/>`;
+  }
+  const initials = String(name || "?").replace(/^(Dr|Prof|Professor)\.?\s+/i, "")
+    .split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("") || "?";
+  return `<svg viewBox="0 0 64 64" role="img" aria-label="${esc(initials)}">
+    <circle cx="32" cy="32" r="32" fill="${bg}"/>
+    <g clip-path="circle(32px at 32px 32px)">${lines}</g>
+    <circle cx="32" cy="32" r="13" fill="${bg}"/>
+    <text x="32" y="37" text-anchor="middle" fill="${fg}"
+      font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600">${esc(initials)}</text>
+  </svg>`;
+}
+
+function photoSrc(v){
+  const s = String(v || "").trim();
+  if (!s) return "";
+  return /^(https?:)?\/\//.test(s) ? s : CONFIG.photoDir + s;
+}
+
+function safeHref(h){
+  const s = String(h || "").trim();
+  return /^(https?:|mailto:)/i.test(s) ? s : "";
+}
+
+/* RFC 4180 style parser: handles quoted fields, embedded commas and newlines. */
+function parseCSV(text){
+  const rows = [];
+  let row = [], field = "", inQuotes = false;
+  const src = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  for (let i = 0; i < src.length; i++){
+    const c = src[i];
+    if (inQuotes){
+      if (c === '"'){
+        if (src[i + 1] === '"'){ field += '"'; i++; }
+        else inQuotes = false;
+      } else field += c;
+    } else if (c === '"'){ inQuotes = true; }
+    else if (c === ","){ row.push(field); field = ""; }
+    else if (c === "\n"){ row.push(field); rows.push(row); row = []; field = ""; }
+    else field += c;
+  }
+  if (field.length || row.length){ row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(c => String(c).trim() !== ""));
+}
+
+/* Sheet columns: order, role, name, title, about, photo, links, flag
+   links cell: "Email | mailto:a@b.com ; Website | https://c.d" */
+function peopleFromCSV(text){
+  const rows = parseCSV(text);
+  if (!rows.length) return [];
+  const head = rows[0].map(h => h.trim().toLowerCase());
+  const at = n => head.indexOf(n);
+  return rows.slice(1).map(r => {
+    const get = n => { const i = at(n); return i === -1 ? "" : String(r[i] || "").trim(); };
+    const links = get("links").split(";").map(s => s.trim()).filter(Boolean).map(s => {
+      const i = s.indexOf("|");
+      return i === -1 ? { label: s, href: s }
+                      : { label: s.slice(0, i).trim(), href: s.slice(i + 1).trim() };
+    }).filter(l => l.label && l.href);
+    return {
+      order: Number(get("order")) || 999,
+      role: (get("role") || "phd").toLowerCase(),
+      name: get("name"),
+      title: get("title"),
+      line: get("about"),
+      photo: get("photo"),
+      todo: /^(y|yes|true|1|check)$/i.test(get("flag")),
+      links
+    };
+  }).filter(p => p.name).sort((a, b) => a.order - b.order);
+}
+
+async function loadJSON(url){
+  if (!url) return null;
+  try { const r = await fetch(url, { cache: "no-cache" }); return r.ok ? await r.json() : null; }
+  catch (e) { return null; }
+}
+
+async function loadPeople(){
+  if (CONFIG.peopleSheetCSV){
+    try {
+      const r = await fetch(CONFIG.peopleSheetCSV, { cache: "no-cache" });
+      if (r.ok){
+        const list = peopleFromCSV(await r.text());
+        if (list.length) return list;
+      }
+    } catch (e) { /* fall through */ }
+  }
+  const j = await loadJSON(CONFIG.peopleJSON);
+  if (Array.isArray(j) && j.length) return j.slice().sort((a, b) => (a.order || 0) - (b.order || 0));
+  if (j && Array.isArray(j.people)) return j.people;
+  return FALLBACK.people;
+}
+
+/* ---------------------------------------------------------------- render */
+
+const ROLES = FALLBACK.roles;
+let PEOPLE = [], FILTER = "all";
+
+function renderThemes(list){
+  document.getElementById("themes").innerHTML = (list || []).map(t => `
+    <div class="theme">
+      <h3>${esc(t.title)}</h3>
+      <p>${esc(t.body)}</p>
+      ${t.meta ? `<p class="meta">${esc(t.meta)}</p>` : ""}
+    </div>`).join("");
+}
+
+function renderPeople(){
+  const counts = {};
+  PEOPLE.forEach(p => { counts[p.role] = (counts[p.role] || 0) + 1; });
+  const present = ROLES.filter(r => counts[r.key]);
+  document.getElementById("pfilters").innerHTML =
+    `<button data-f="all" aria-pressed="${FILTER === "all"}">Everyone</button>` +
+    present.map(r => `<button data-f="${r.key}" aria-pressed="${FILTER === r.key}">${esc(r.label)}</button>`).join("");
+
+  document.getElementById("plist").innerHTML = PEOPLE
+    .filter(p => FILTER === "all" || p.role === FILTER)
+    .map(p => {
+      const src = photoSrc(p.photo);
+      const av = src ? `<img src="${esc(src)}" alt="" loading="lazy">` : avatarSVG(p.name);
+      const links = (p.links || []).map(l => {
+        const h = safeHref(l.href);
+        return h ? `<a href="${esc(h)}" rel="noopener">${esc(l.label)}</a>` : "";
+      }).join("");
+      return `<div class="card${p.role === "pi" ? " lead" : ""}">
+        <div class="av">${av}</div>
+        <div class="who">
+          <b>${esc(p.name)}</b>${p.todo ? `<span class="flag">check</span>` : ""}
+          <div class="role">${esc(p.title)}</div>
+          ${p.line ? `<div class="line">${esc(p.line)}</div>` : ""}
+          ${links ? `<div class="links">${links}</div>` : ""}
+        </div>
+      </div>`;
+    }).join("");
+}
+
+function renderPubs(list){
+  const sorted = (list || []).slice().sort((a, b) => (b.year || 0) - (a.year || 0));
+  const decades = [...new Set(sorted.map(p => p.year >= 2020 ? "2020s" : "2010s"))];
+  const labels = { "2020s": "2020 onwards", "2010s": "Before 2020" };
+  document.getElementById("yfilters").innerHTML =
+    `<button data-y="all" aria-pressed="true">All</button>` +
+    decades.map(d => `<button data-y="${d}" aria-pressed="false">${labels[d]}</button>`).join("");
+  document.getElementById("publist").innerHTML = sorted.map(p => {
+    const t = p.doi ? `<a href="https://doi.org/${esc(p.doi)}" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
+    return `<div class="pub" data-y="${p.year >= 2020 ? "2020s" : "2010s"}">
+      <span class="yr">${esc(p.year)}</span>
+      <span class="t">${t}</span>
+      ${p.authors ? `<div class="a">${esc(p.authors)}</div>` : ""}
+      <div class="v"><em>${esc(p.venue)}</em>${p.detail ? " " + esc(p.detail) : ""}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("pubstamp").textContent =
+    sorted.length ? sorted.length + " papers. Full list on ORCID." : "";
+}
+
+function wireNav(){
+  const links = [...document.querySelectorAll("#railnav a, #topnav a")];
+  const secs = ["about","research","people","publications","life","join","contact"]
+    .map(id => document.getElementById(id)).filter(Boolean);
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.setAttribute("aria-current",
+        a.getAttribute("href") === "#" + e.target.id ? "true" : "false"));
+    });
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+  secs.forEach(s => io.observe(s));
+}
+
+document.getElementById("pfilters").addEventListener("click", ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  FILTER = b.getAttribute("data-f");
+  renderPeople();
+});
+
+document.getElementById("yfilters").addEventListener("click", ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  ev.currentTarget.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  const v = b.getAttribute("data-y");
+  document.querySelectorAll("#publist .pub").forEach(el => {
+    el.style.display = (v === "all" || el.getAttribute("data-y") === v) ? "" : "none";
+  });
+});
+
+(async function boot(){
+  const [people, pubs, themes] = await Promise.all([
+    loadPeople(),
+    loadJSON(CONFIG.publicationsJSON),
+    loadJSON(CONFIG.themesJSON)
+  ]);
+  PEOPLE = people;
+  renderPeople();
+  renderPubs(pubs || FALLBACK.publications);
+  renderThemes(themes || FALLBACK.themes);
+  wireNav();
+})();
+</script>
+</body>
+</html>

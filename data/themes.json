@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Encoding and sequence design",
+    "body": "Steady-state sequences carry more information than a single image usually exposes. We have used the off-resonance profile of unbalanced SSFP to reach super-resolution at very low RF power, and Fourier-encoded the configuration states so that a short-TR acquisition returns every echo in every readout rather than one at a time. The same family of ideas is now being pushed at sodium, where signal is scarce and resolution has always been the limit.",
+    "meta": "Magnetic Resonance in Medicine, 2021 and 2025"
+  },
+  {
+    "title": "Ultra-high field, and motion",
+    "body": "Above 3 T the resolution and contrast improve and the physics gets less forgiving: B0 and B1 behaviour breaks conventional sequences, and physiological motion that was negligible becomes the dominant error term. We work at LoCUS on acquisitions that stay robust under those conditions, including pulsatile motion and its correction.",
+    "meta": "London Collaborative Ultra-high field System"
+  },
+  {
+    "title": "Diffusion microstructure",
+    "body": "Diffusion contrast can be made specific to particular tissue compartments if the encoding is chosen well. Current work looks at short-T2 signal as a route to soma-specific contrast, and at combining the temporal diffusion ratio with isotropic encoding to separate restricted compartments, tested against high-field preclinical and non-human primate data.",
+    "meta": "9.4 T rodent and macaque datasets"
+  },
+  {
+    "title": "Quantitative body MRI",
+    "body": "Fat fraction in bone marrow changes with malignant disease and with treatment, which makes whole-body MRI a candidate for response assessment if the measurement can be trusted. We work on variable flip angle chemical shift encoding and on the B1 mapping that quantitative body protocols depend on, in collaboration with the Royal Marsden.",
+    "meta": "With the Royal Marsden NHS Foundation Trust"
+  },
+  {
+    "title": "Learning-based reconstruction and synthesis",
+    "body": "Where reconstruction uses a learned prior, the honest question is which parts of the output came from measured signal and which came from the prior. We work on reconstruction, cross-field synthesis and uncertainty estimates that keep that distinction visible, including implicit neural representations for motion-corrupted acquisitions and low-field to high-field synthesis.",
+    "meta": "Joint projects with the Yang group, Imperial-X"
+  }
+]
