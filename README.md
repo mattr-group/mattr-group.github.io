@@ -99,7 +99,6 @@ Notes:
 
 ## 4. Things still open
 
-- Coraline, Haneefah and James are listed without surnames, flagged `check`.
 - No photographs yet.
 - The research threads in `data/themes.json` were drafted from published
   papers and recent group meetings, and have not been reviewed by Pete.
