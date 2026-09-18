@@ -100,8 +100,6 @@ Notes:
 ## 4. Things still open
 
 - No photographs yet.
-- The research threads in `data/themes.json` were drafted from published
-  papers and recent group meetings, and have not been reviewed by Pete.
 - The Join us section has no current openings in it.
 
 ## Note on repository naming
