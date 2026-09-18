@@ -1,8 +1,8 @@
 order,role,name,title,about,photo,links,flag
 10,pi,Dr Pete Lally,"Assistant Professor in MR Physics, group lead","Brain MRI, spatial encoding strategies, pulse sequence design, MR spectroscopy, and quantitative biomarkers in clinical trials.",pete.jpg,Email | mailto:p.lally@imperial.ac.uk ; Imperial profile | https://profiles.imperial.ac.uk/p.lally,
-20,phd,Yassine Azma,"PhD student, since 2023","Fat quantification with whole-body MRI in malignant bone disease, using variable flip angle chemical shift encoding, alongside work on B1 mapping.",,,
-30,phd,Coraline Beitone,"PhD student, surname to confirm","Signal model work, and ISMRM organisation including the British Chapter postgraduate meeting.",,,yes
-40,phd,Haneefah Brnawi,"PhD student, surname to confirm","Super-resolution sodium MRI, combining unbalanced SSFP with 3D cones at ultra-high field, for knee osteoarthritis and degenerative brain disease.",,,yes
+20,phd,Yassine Azma,"PhD student","Fat quantification with whole-body MRI in malignant bone disease, using variable flip angle chemical shift encoding, alongside work on B1 mapping.",,,
+30,phd,Coraline Beitone,"PhD student","Signal model work, and ISMRM organisation including the British Chapter postgraduate meeting.",,,yes
+40,phd,Haneefah Brnawi,"PhD student","Super-resolution sodium MRI, combining unbalanced SSFP with 3D cones at ultra-high field, for knee osteoarthritis and degenerative brain disease.",,,yes
 50,phd,Zhenxuan Zhang,PhD student,"Motion-robust MRI reconstruction with implicit neural representations, uncertainty-aware acquisition, and ultra-low-field to high-field synthesis.",,Website | https://zhenxuan-zhang.github.io,
-60,phd,James Brownsey,"PhD student, surname to confirm","Diffusion MRI microstructure: short-T2 soma contrast and the temporal diffusion ratio.",,,yes
-
+60,phd,James Brownsey,"PhD student","Diffusion MRI microstructure: short-T2 soma contrast and the temporal diffusion ratio.",,,yes
+70,phd,Amin Y Adan,"PhD student","",,,yes
