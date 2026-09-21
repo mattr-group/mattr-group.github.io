@@ -1,66 +1,298 @@
 [
   {
     "year": 2025,
-    "title": "Steady-state free precession for T2* relaxometry: all echoes in every readout with k-space aliasing",
-    "authors": "Lally PJ, Chiew M, Matthews PM, Miller KL, Bangerter NK",
-    "venue": "Magnetic Resonance in Medicine",
+    "title": "Data- and Physics-Driven Deep Learning Based Reconstruction for Fast MRI: Fundamentals and Methodologies",
+    "authors": "Huang J, Wu Y, Wang F, Fang Y, Nan Y, Alkan C, Abraham D, Liao C, Xu L, Gao Z, Wu W, Zhu L, et al.",
+    "venue": "IEEE Reviews in Biomedical Engineering",
+    "detail": "18:152–171",
+    "doi": "10.1109/rbme.2024.3485022"
+  },
+  {
+    "year": 2025,
+    "title": "Pretext Task Adversarial Learning for Unpaired Low-field to Ultra High-field MRI Synthesis",
+    "authors": "",
+    "venue": "arXiv",
     "detail": "",
-    "doi": "10.1002/mrm.30590"
+    "doi": "10.48550/arxiv.2503.05339"
+  },
+  {
+    "year": 2025,
+    "title": "Task-oriented Uncertainty Collaborative Learning for Label-Efficient Brain Tumor Segmentation",
+    "authors": "",
+    "venue": "arXiv",
+    "detail": "",
+    "doi": "10.48550/arxiv.2503.05682"
+  },
+  {
+    "year": 2024,
+    "title": "Data and Physics driven Deep Learning Models for Fast MRI Reconstruction: Fundamentals and Methodologies",
+    "authors": "",
+    "venue": "arXiv",
+    "detail": "",
+    "doi": "10.48550/arxiv.2401.16564"
+  },
+  {
+    "year": 2024,
+    "title": "Initial findings using high‐resolution magnetic resonance imaging for visualisation of the sural nerve and surrounding anatomy in healthy volunteers at <scp>7 Tesla</scp>",
+    "authors": "McDowell AR, Zambreanu L, Salhab HA, Doherty CM, Bridgen P, Lally P, Shah S, Huo Z, Wastling SJ, Yousry T, Morrow J, Thornton JS, et al.",
+    "venue": "Journal of the Peripheral Nervous System",
+    "detail": "29:368–375",
+    "doi": "10.1111/jns.12645"
+  },
+  {
+    "year": 2023,
+    "title": "Whole-Body Hypothermia, Cerebral Magnetic Resonance Biomarkers, and Outcomes in Neonates With Moderate or Severe Hypoxic-Ischemic Encephalopathy Born at Tertiary Care Centers vs Other Facilities",
+    "authors": "Thayyil S, Montaldo P, Krishnan V, Ivain P, Pant S, Lally PJ, Bandiya P, Benkappa N, Kamalaratnam CN, Chandramohan R, Manerkar S, Mondkar J, et al.",
+    "venue": "JAMA Network Open",
+    "detail": "6:e2312152",
+    "doi": "10.1001/jamanetworkopen.2023.12152"
+  },
+  {
+    "year": 2022,
+    "title": "Edited magnetic resonance spectroscopy in the neonatal brain",
+    "authors": "Song Y, Lally PJ, Yanez Lopez M, Oeltzschner G, Nebel MB, Gagoski B, Kecskemeti S, Hui SCN, Zöllner HJ, Shukla D, Arichi T, De Vita E, et al.",
+    "venue": "Neuroradiology",
+    "detail": "64:217–232",
+    "doi": "10.1007/s00234-021-02821-9"
+  },
+  {
+    "year": 2022,
+    "title": "Feasibility of simultaneous high‐resolution anatomical and quantitative <scp>magnetic resonance</scp> imaging of sciatic nerves in patients with <scp>Charcot–Marie–Tooth</scp> type <scp>1A</scp> (<scp>CMT1A</scp>) at <scp>7T</scp>",
+    "authors": "Sveinsson B, Rowe OE, Stockmann JP, Park DJ, Lally PJ, Rosen MS, Barry RL, Eichler F, Rosen BR, Sadjadi R",
+    "venue": "Muscle &amp; Nerve",
+    "detail": "66:206–211",
+    "doi": "10.1002/mus.27647"
   },
   {
     "year": 2021,
-    "title": "Unbalanced SSFP for super-resolution in MRI",
-    "authors": "Lally PJ, Matthews PM, Bangerter NK",
-    "venue": "Magnetic Resonance in Medicine",
-    "detail": "85:2477–2489"
+    "title": "Hypothermia for moderate or severe neonatal encephalopathy in low-income and middle-income countries (HELIX): a randomised controlled trial in India, Sri Lanka, and Bangladesh",
+    "authors": "Thayyil S, Pant S, Montaldo P, Shukla D, Oliveira V, Ivain P, Bassett P, Swamy R, Mendoza J, Moreno-Morales M, Lally PJ, Benakappa N, et al.",
+    "venue": "The Lancet Global Health",
+    "detail": "9:e1273–e1285",
+    "doi": "10.1016/s2214-109x(21)00264-3"
+  },
+  {
+    "year": 2021,
+    "title": "Magnetic Resonance Imaging as a Biomarker in Diabetic and HIV-Associated Peripheral Neuropathy: A Systematic Review-Based Narrative",
+    "authors": "Evans MC, Wade C, Hohenschurz-Schmidt D, Lally P, Ugwudike A, Shah K, Bangerter N, Sharp DJ, Rice ASC",
+    "venue": "Frontiers in Neuroscience",
+    "detail": "15",
+    "doi": "10.3389/fnins.2021.727311"
   },
   {
     "year": 2021,
     "title": "Traumatic brain injury: a comparison of diffusion and volumetric magnetic resonance imaging measures",
-    "authors": "Bourke N, Yanez-Lopez M, Jenkins P, De Simoni S, Cole J, Lally PJ, Mallas E, Zhang H, Sharp DJ",
+    "authors": "Bourke NJ, Yanez Lopez M, Jenkins PO, De Simoni S, Cole JH, Lally P, Mallas EJ, Zhang H, Sharp DJ",
     "venue": "Brain Communications",
-    "detail": "3"
+    "detail": "3",
+    "doi": "10.1093/braincomms/fcab006"
+  },
+  {
+    "year": 2021,
+    "title": "Unbalanced SSFP for super‐resolution in MRI",
+    "authors": "Lally PJ, Matthews PM, Bangerter NK",
+    "venue": "Magnetic Resonance in Medicine",
+    "detail": "85:2477–2489",
+    "doi": "10.1002/mrm.28593"
   },
   {
     "year": 2020,
-    "title": "White matter injury after neonatal encephalopathy is associated with thalamic metabolite perturbations",
-    "authors": "Montaldo P, Ivain P, Lally PJ, et al.",
-    "venue": "EBioMedicine",
-    "detail": "52"
+    "title": "Preemptive Morphine During Therapeutic Hypothermia After Neonatal Encephalopathy: A Secondary Analysis",
+    "authors": "Liow N, Montaldo P, Lally PJ, Teiserskas J, Bassett P, Oliveira V, Mendoza J, Slater R, Shankaran S, Thayyil S",
+    "venue": "Therapeutic Hypothermia and Temperature Management",
+    "detail": "10:45–52",
+    "doi": "10.1089/ther.2018.0052"
   },
   {
     "year": 2020,
     "title": "Therapeutic hypothermia for mild neonatal encephalopathy: a systematic review and meta-analysis",
-    "authors": "Kariholu U, Montaldo P, Markati T, Lally PJ, et al.",
-    "venue": "Archives of Disease in Childhood: Fetal and Neonatal Edition",
-    "detail": "105:225–228"
+    "authors": "Kariholu U, Montaldo P, Markati T, Lally PJ, Pryce R, Teiserskas J, Liow N, Oliveira V, Soe A, Shankaran S, Thayyil S",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "105:225–228",
+    "doi": "10.1136/archdischild-2018-315711"
+  },
+  {
+    "year": 2020,
+    "title": "Transcriptomic profile of adverse neurodevelopmental outcomes after neonatal encephalopathy",
+    "authors": "Montaldo P, Cunnington A, Oliveira V, Swamy R, Bandya P, Pant S, Lally PJ, Ivain P, Mendoza J, Atreja G, Padmesh V, Baburaj M, et al.",
+    "venue": "Scientific Reports",
+    "detail": "10",
+    "doi": "10.1038/s41598-020-70131-w"
+  },
+  {
+    "year": 2020,
+    "title": "White matter injury after neonatal encephalopathy is associated with thalamic metabolite perturbations",
+    "authors": "Montaldo P, Ivain P, Lally P, Bassett P, Pant S, Oliveira V, Mendoza J, Morales M, Swamy R, Shankaran S, Thayyil S",
+    "venue": "EBioMedicine",
+    "detail": "52:102663",
+    "doi": "10.1016/j.ebiom.2020.102663"
   },
   {
     "year": 2019,
-    "title": "Magnetic resonance spectroscopy assessment of brain injury after moderate hypothermia in neonatal encephalopathy: a prospective multi-centre study",
-    "authors": "Lally PJ, Montaldo P, Oliveira V, et al., Shankaran S, Thayyil S",
-    "venue": "Lancet Neurology",
-    "detail": "18:35–45"
+    "title": "Magnetic resonance spectroscopy assessment of brain injury after moderate hypothermia in neonatal encephalopathy: a prospective multicentre cohort study",
+    "authors": "Lally PJ, Montaldo P, Oliveira V, Soe A, Swamy R, Bassett P, Mendoza J, Atreja G, Kariholu U, Pattnayak S, Sashikumar P, Harizaj H, et al.",
+    "venue": "The Lancet Neurology",
+    "detail": "18:35–45",
+    "doi": "10.1016/s1474-4422(18)30325-9"
+  },
+  {
+    "year": 2019,
+    "title": "Pitfalls in using neonatal brain NAA to predict infant development – Authors' reply",
+    "authors": "Montaldo P, Swamy R, Bassett P, Lally PJ, Shankaran S, Thayyil S",
+    "venue": "The Lancet Neurology",
+    "detail": "18:423–424",
+    "doi": "10.1016/s1474-4422(19)30116-4"
+  },
+  {
+    "year": 2019,
+    "title": "Prognostic Accuracy of Heart Rate Variability Analysis in Neonatal Encephalopathy: A Systematic Review",
+    "authors": "Oliveira V, Martins R, Liow N, Teiserskas J, von Rosenberg W, Adjei T, Shivamurthappa V, Lally PJ, Mandic D, Thayyil S",
+    "venue": "Neonatology",
+    "detail": "115:59–67",
+    "doi": "10.1159/000493002"
+  },
+  {
+    "year": 2019,
+    "title": "Therapeutic hypothermia initiated within 6 hours of birth is associated with reduced brain injury on MR biomarkers in mild hypoxic-ischaemic encephalopathy: a non-randomised cohort study",
+    "authors": "Montaldo P, Lally PJ, Oliveira V, Swamy R, Mendoza J, Atreja G, Kariholu U, Shivamurthappa V, Liow N, Teiserskas J, Pryce R, Soe A, et al.",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "104:F515–F520",
+    "doi": "10.1136/archdischild-2018-316040"
+  },
+  {
+    "year": 2019,
+    "title": "Whole Blood Gene Expression Reveals Specific Transcriptome Changes in Neonatal Encephalopathy",
+    "authors": "Montaldo P, Kaforou M, Pollara G, Hervás-Marín D, Calabria I, Panadero J, Pedrola L, Lally PJ, Oliveira V, Kage A, Atreja G, Mendoza J, et al.",
+    "venue": "Neonatology",
+    "detail": "115:68–76",
+    "doi": "10.1159/000492420"
   },
   {
     "year": 2018,
-    "title": "Postmortem genetic testing for cardiac ion channelopathies in stillbirths",
-    "authors": "Munroe PB, Addison S, Abrams DJ, et al., Lally PJ, Thayyil S",
-    "venue": "Circulation: Cardiovascular Genetics",
-    "detail": "11"
+    "title": "Hypothermia for encephalopathy in low-income and middle-income countries: feasibility of whole-body cooling using a low-cost servo-controlled device",
+    "authors": "Oliveira V, Kumutha JR, E N, Somanna J, Benkappa N, Bandya P, Chandrasekeran M, Swamy R, Mondkar J, Dewang K, Manerkar S, Sundaram M, et al.",
+    "venue": "BMJ Paediatrics Open",
+    "detail": "2:e000245",
+    "doi": "10.1136/bmjpo-2017-000245"
+  },
+  {
+    "year": 2018,
+    "title": "International Perspectives: Hypothermic Neuroprotection for Neonatal Encephalopathy in Low- and Middle-Income Countries: A New Approach to an Old Problem",
+    "authors": "Montaldo P, Lally PJ, Oliveira V, Thayyil S",
+    "venue": "NeoReviews",
+    "detail": "19:e735–e741",
+    "doi": "10.1542/neo.19-12-e735"
+  },
+  {
+    "year": 2018,
+    "title": "Postmortem Genetic Testing for Cardiac Ion Channelopathies in Stillbirths",
+    "authors": "Munroe PB, Addison S, Abrams DJ, Sebire NJ, Cartwright J, Donaldson I, Cohen MM, Mein C, Tinker A, Harmer SC, Aziz Q, Terry A, et al.",
+    "venue": "Circulation: Genomic and Precision Medicine",
+    "detail": "11",
+    "doi": "10.1161/circgen.117.001817"
+  },
+  {
+    "year": 2018,
+    "title": "Residual brain injury after early discontinuation of cooling therapy in mild neonatal encephalopathy",
+    "authors": "Lally PJ, Montaldo P, Oliveira V, Swamy RS, Soe A, Shankaran S, Thayyil S",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "103:F383–F387",
+    "doi": "10.1136/archdischild-2017-313321"
+  },
+  {
+    "year": 2018,
+    "title": "Therapeutic hypothermia in mild neonatal encephalopathy: a national survey of practice in the UK",
+    "authors": "Oliveira V, Singhvi DP, Montaldo P, Lally PJ, Mendoza J, Manerkar S, Shankaran S, Thayyil S",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "103:F388–F390",
+    "doi": "10.1136/archdischild-2017-313320"
   },
   {
     "year": 2017,
-    "title": "Residual brain injury after early discontinuation of cooling therapy in mild neonatal encephalopathy",
-    "authors": "Lally PJ, Montaldo P, Oliveira V, Swamy RS, Soe A, Shankaran S, Thayyil S",
-    "venue": "Archives of Disease in Childhood: Fetal and Neonatal Edition",
-    "detail": "103:F383–F387"
+    "title": "Hypothermia for encephalopathy in low and middle-income countries (HELIX): study protocol for a randomised controlled trial",
+    "authors": "for the HELIX Trial group, Thayyil S, Oliveira V, Lally PJ, Swamy R, Bassett P, Chandrasekaran M, Mondkar J, Mangalabharathi S, Benkappa N, Seeralar A, Shahidullah M, et al.",
+    "venue": "Trials",
+    "detail": "18",
+    "doi": "10.1186/s13063-017-2165-3"
+  },
+  {
+    "year": 2016,
+    "title": "Does Magnetic Resonance Brain Scanning at 3.0 Tesla Pose a Hyperthermic Challenge to Term Neonates?",
+    "authors": "Cawley P, Few K, Greenwood R, Malcolm P, Johnson G, Lally P, Thayyil S, Clarke P",
+    "venue": "The Journal of Pediatrics",
+    "detail": "175:228–230.e1",
+    "doi": "10.1016/j.jpeds.2016.05.014"
+  },
+  {
+    "year": 2016,
+    "title": "Quantification of maceration changes using post mortem MRI in fetuses",
+    "authors": "Montaldo P, Addison S, Oliveira V, Lally PJ, Taylor AM, Sebire NJ, Thayyil S, Arthurs OJ",
+    "venue": "BMC Medical Imaging",
+    "detail": "16",
+    "doi": "10.1186/s12880-016-0137-9"
+  },
+  {
+    "year": 2016,
+    "title": "Therapeutic hypothermia in neonatal cervical spine injury",
+    "authors": "Montaldo P, Oliveira V, Lally PJ, Chaban B, Atreja G, Kirmi O, Thayyil S",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "101:F468–F468",
+    "doi": "10.1136/archdischild-2016-310690"
   },
   {
     "year": 2015,
-    "title": "Magnetic Resonance Biomarkers in Neonatal Encephalopathy (MARBLE): a prospective multi-country study",
-    "authors": "Lally PJ, Pauliah S, Montaldo P, et al., Shankaran S, Thayyil S",
+    "title": "Assessment of optic nerve development using post‐mortem Magnetic Resonance Imaging (MRI) in fetuses and newborns",
+    "authors": "Soo A, Taha S, Lally P, Kirmi O, Jones B, Thayyil S",
+    "venue": "Prenatal Diagnosis",
+    "detail": "35:1262–1264",
+    "doi": "10.1002/pd.4672"
+  },
+  {
+    "year": 2015,
+    "title": "Cooling in a low-resource environment: Lost in translation",
+    "authors": "Montaldo P, Pauliah SS, Lally PJ, Olson L, Thayyil S",
+    "venue": "Seminars in Fetal and Neonatal Medicine",
+    "detail": "20:72–79",
+    "doi": "10.1016/j.siny.2014.10.004"
+  },
+  {
+    "year": 2015,
+    "title": "Diagnostic accuracy and limitations of post-mortem MRI for neurological abnormalities in fetuses and children",
+    "authors": "Arthurs O, Thayyil S, Pauliah S, Jacques T, Chong W, Gunny R, Saunders D, Addison S, Lally P, Cady E, Jones R, Norman W, et al.",
+    "venue": "Clinical Radiology",
+    "detail": "70:872–880",
+    "doi": "10.1016/j.crad.2015.04.008"
+  },
+  {
+    "year": 2015,
+    "title": "Magnetic Resonance Biomarkers in Neonatal Encephalopathy (MARBLE): a prospective multicountry study",
+    "authors": "Lally PJ, Pauliah S, Montaldo P, Chaban B, Oliveira V, Bainbridge A, Soe A, Pattnayak S, Clarke P, Satodia P, Harigopal S, Abernethy LJ, et al.",
     "venue": "BMJ Open",
-    "detail": "5"
+    "detail": "5:e008912",
+    "doi": "10.1136/bmjopen-2015-008912"
+  },
+  {
+    "year": 2015,
+    "title": "Quantification of ante-mortem hypoxic ischemic brain injury by post-mortem cerebral magnetic resonance imaging in neonatal encephalopathy",
+    "authors": "Montaldo P, Chaban B, Lally PJ, Sebire NJ, Taylor AM, Thayyil S",
+    "venue": "European Journal of Paediatric Neurology",
+    "detail": "19:665–671",
+    "doi": "10.1016/j.ejpn.2015.07.006"
+  },
+  {
+    "year": 2015,
+    "title": "‘Feed and wrap’ or sedate and immobilise for neonatal brain MRI?",
+    "authors": "Ibrahim T, Few K, Greenwood R, Smith C, Malcolm P, Johnson G, Lally P, Thayyil S, Clarke P",
+    "venue": "Archives of Disease in Childhood - Fetal and Neonatal Edition",
+    "detail": "100:F465.2–F466",
+    "doi": "10.1136/archdischild-2015-308847"
+  },
+  {
+    "year": 2014,
+    "title": "Neonatal Encephalopathic Cerebral Injury in South India Assessed by Perinatal Magnetic Resonance Biomarkers and Early Childhood Neurodevelopmental Outcome",
+    "authors": "Lally PJ, Price DL, Pauliah SS, Bainbridge A, Kurien J, Sivasamy N, Cowan FM, Balraj G, Ayer M, Satheesan K, Ceebi S, Wade A, et al.",
+    "venue": "PLoS ONE",
+    "detail": "9:e87874",
+    "doi": "10.1371/journal.pone.0087874"
   }
 ]
